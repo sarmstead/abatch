@@ -16,7 +16,16 @@ let srcFullArr = [];
 srcFileNameArr.forEach(src => {
     // Replace spaces with proper UTF-8 character
     newSrc = src.split(' ').join('%20');
-    
+
     srcFullArr.push(`${wordpressUploadsDirString}${newSrc}`);
 });
-console.log(srcFullArr);
+
+try {
+    const fileContents = fs.readFileSync('../anchor-content/foundational.txt', 'utf-8');
+    let anchorContent = fileContents.split('\n');
+    console.log(anchorContent);
+  } catch (err) {
+    console.error(err);
+}
+
+// console.log(srcFullArr);
