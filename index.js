@@ -20,12 +20,15 @@ srcFileNameArr.forEach(src => {
     srcFullArr.push(`${wordpressUploadsDirString}${newSrc}`);
 });
 
+let anchorContentFilePath = '../anchor-content/foundational.txt';
+
 try {
-    const fileContents = fs.readFileSync('../anchor-content/foundational.txt', 'utf-8');
+    const fileContents = fs.readFileSync(anchorContentFilePath, 'utf-8');
     let anchorContent = fileContents.split('\n');
     console.log(anchorContent);
   } catch (err) {
     console.error(err);
 }
+
 
 // console.log(srcFullArr);
