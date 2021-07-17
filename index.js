@@ -3,7 +3,7 @@ const path = require('path');
 
 let srcDirPath = '../1\ Foundational\ Years/';
 
-let srcArr = fs.readdirSync(srcDirPath);
+let srcBaseArr = fs.readdirSync(srcDirPath);
 
 let targetYear = new Date().getFullYear().toString();
 let targetMonth = new Date().getMonth().toString();
@@ -12,5 +12,8 @@ if (targetMonth < 10) {
 }
 let relativePathString = `/wp-content/uploads/${targetYear}/${targetMonth}/`;
 
-
-console.log(relativePathString);
+let srcFullArr = [];
+srcBaseArr.forEach(src => {
+    srcFullArr.push(`${relativePathString}${src}`);
+});
+console.log(srcFullArr);
