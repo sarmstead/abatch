@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const prompt = require('prompt-sync')();
 
 let srcDirPath = '../1\ Foundational\ Years/';
 
