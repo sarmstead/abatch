@@ -23,12 +23,6 @@ const createSrc = (srcDirPath) => {
     console.log(srcFullArr);
 }
 
-// try {
-//     createSrc(srcDirPath);
-// } catch (err) {
-//     console.error(err);
-// }
-
 let anchorContentFilePath = '../anchor-content/foundational.txt';
 
 const createContent = (anchorContentFilePath, encoding='utf-8') => {
@@ -37,12 +31,9 @@ const createContent = (anchorContentFilePath, encoding='utf-8') => {
     console.log(anchorContent);
 }
 
-
 try {
+    createSrc(srcDirPath);
     createContent(anchorContentFilePath);
   } catch (err) {
     console.error(err);
 }
-
-
-console.log(srcFullArr);
