@@ -20,12 +20,11 @@ const createSrc = (srcDirPath) => {
         srcFullArr.push(`${wordpressUploadsDirString}${newSrc}`);
     });
 
-    return srcFullArr;
+    console.log(srcFullArr);
 }
 
 try {
     createSrc(srcDirPath);
-    console.log(srcDirPath);
 } catch (err) {
     console.error(err);
 }
