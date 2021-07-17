@@ -14,6 +14,9 @@ let wordpressUploadsDirString = `/wp-content/uploads/${targetYear}/${targetMonth
 
 let srcFullArr = [];
 srcFileNameArr.forEach(src => {
-    srcFullArr.push(`${wordpressUploadsDirString}${src}`);
+    // Replace spaces with proper UTF-8 character
+    newSrc = src.split(' ').join('%20');
+    
+    srcFullArr.push(`${wordpressUploadsDirString}${newSrc}`);
 });
 console.log(srcFullArr);
