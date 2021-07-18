@@ -1,10 +1,13 @@
 const prompt = require('prompt-sync')({sigint: true});
 const chalk = require('chalk');
 const { program } = require('commander');
+
 // Import modules
 const createSrc = require('./utils/createSrc');
 const createContent = require('./utils/createContent');
 const saveFile = require('./utils/saveFile');
+
+program.version('0.1.1').description('Simple anchor link generator for WordPress');
 
 // User prompts
 let srcDirPath = prompt('What is your src directory path? ');
