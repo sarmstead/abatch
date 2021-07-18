@@ -3,7 +3,7 @@ const fs = require('fs');
 const createSrc = (srcDirPath) => {
     let srcFileArr = fs.readdirSync(srcDirPath);
     let targetYear = new Date().getFullYear().toString();
-    let targetMonth = new Date().getMonth().toString();
+    let targetMonth = (new Date().getMonth() + 1).toString();
     if (targetMonth < 10) {
         targetMonth = '0'.concat(targetMonth);
     }
