@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const prompt = require('prompt-sync')({sigint: true});
 
-let srcDirPath = '../1\ Foundational\ Years/';
+let srcDirPath = prompt('What is your src directory path? ');
+console.log(srcDirPath);
 
 const createSrc = (srcDirPath) => {
     let srcFileArr = fs.readdirSync(srcDirPath);
@@ -24,7 +25,7 @@ const createSrc = (srcDirPath) => {
     console.log(srcFullArr);
 }
 
-let anchorContentFilePath = '../anchor-content/foundational.txt';
+let anchorContentFilePath = prompt('What is your anchor content file path? ');
 
 const createContent = (anchorContentFilePath, encoding='utf-8') => {
     const fileContents = fs.readFileSync(anchorContentFilePath, encoding);
@@ -38,3 +39,4 @@ try {
   } catch (err) {
     console.error(err);
 }
+
