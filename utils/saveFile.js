@@ -11,7 +11,7 @@ const saveFile = (anchorArray, fileName) => {
 
     // Create a file with the contents of the anchorArray
     anchorArray.forEach(anchor => {
-        fs.open(path.join(__dirname, '../../anchors', `${fileName}.txt`), 'a', 666, (event, id) => {
+        fs.open(path.join(targetDirectory, `${fileName}.txt`), 'a', 666, (event, id) => {
             fs.write(id, anchor + os.EOL, null, 'utf-8', () => {
                 fs.close(id, () => {
                     return;
