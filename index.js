@@ -19,7 +19,7 @@ try {
         console.error(chalk.red('The files provided do not have the same number of entries'));
     }
     for (i=0; i < anchorSrc.length; i++) {
-        fullAnchor.push(`<a href="${anchorSrc[i]}">${anchorContent[i]}</a>`);
+        fullAnchor.push(`<a href="${anchorSrc[i]}" target="_blank">${anchorContent[i]}</a>`);
     }
     saveFile(fullAnchor, fileName);
   } catch (err) {
