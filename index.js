@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const prompt = require('prompt-sync')({sigint: true});
 
-// let srcDirPath = prompt('What is your src directory path? ');
+let srcDirPath = prompt('What is your src directory path? ');
 
 const createSrc = (srcDirPath) => {
     let srcFileArr = fs.readdirSync(srcDirPath);
@@ -21,7 +21,7 @@ const createSrc = (srcDirPath) => {
         srcFullArr.push(`${wordpressUploadsDirString}${newSrc}`);
     });
 
-    console.log(srcFullArr);
+    return srcFullArr;
 }
 
 let anchorContentFilePath = prompt('What is your anchor content file path? ');
@@ -36,13 +36,18 @@ const createContent = (anchorContentFilePath, encoding='utf-8') => {
             anchorContent.splice(i, 1);
         }
     }
-    
-    console.log(anchorContent);
+
+    return anchorContent;
 }
 
 try {
-    // createSrc(srcDirPath);
-    createContent(anchorContentFilePath);
+    let anchorSrc = createSrc(srcDirPath);
+    let anchorContent = createContent(anchorContentFilePath);
+    let fullAnchor = [];
+    for (i=0; i < anchorSrc.length; i++) {
+        fullAnchor.push(`<a href="${anchorSrc[i]}">${anchorContent[i]}</a>`);
+    }
+    console.log(fullAnchor);
   } catch (err) {
     console.error(err);
 }
