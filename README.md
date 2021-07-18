@@ -1,7 +1,7 @@
-# Anchor Generator
-Anchor Generator programmatically creates HTML anchor tags from a list of PDFs as src's and a list of file names in order.
+# WordPress Batch Anchor Generator
+Anchor Generator programmatically creates HTML anchor tags from a list of PDFs as src's and a list of file names in order. The list is then saved to a `.txt` file in an `anchor` directory immediately above the working directory.
 
-*Note: The src generated will automatically create a relative link with a standard WordPress uploads file path using the following structure: `/wp-content/uploads/${YEAR}/${MONTH}/$FILE`*
+*Note: The src's generated will automatically create a relative link with a standard WordPress uploads file path using the following structure: `/wp-content/uploads/${YEAR}/${MONTH}/$FILE`*
 
 ## How to Use
 Install dependencies
