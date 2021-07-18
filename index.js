@@ -41,6 +41,28 @@ const createContent = (anchorContentFilePath, encoding='utf-8') => {
     return anchorContent;
 }
 
+let fileName = prompt('What file name do you want to save to? ');
+
+const saveFile = (anchorArray, fileName) => {
+    // Create an 'anchors' directory if it doesn't exist
+    const targetDirectory = path.join(__dirname, '../', 'anchors');
+    if(!fs.existsSync(targetDirectory)) {
+        fs.mkdirSync(targetDirectory);
+    }
+
+    // Create a file with the contents of the anchorArray
+    anchorArray.forEach(anchor => {
+        fs.open(path.join(__dirname, '../anchors', `${fileName}.txt`), 'a', 666, (event, id) => {
+            fs.write(id, anchor + os.EOL, null, 'utf-8', () => {
+                fs.close(id, () => {
+                    return;
+                })
+            })
+        })
+    })
+    
+}
+
 try {
     let anchorSrc = createSrc(srcDirPath);
     let anchorContent = createContent(anchorContentFilePath);
@@ -48,6 +70,7 @@ try {
     for (i=0; i < anchorSrc.length; i++) {
         fullAnchor.push(`<a href="${anchorSrc[i]}">${anchorContent[i]}</a>`);
     }
+    saveFile(fullAnchor, fileName);
     console.log(fullAnchor);
   } catch (err) {
     console.error(err);
