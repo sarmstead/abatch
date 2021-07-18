@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const prompt = require('prompt-sync')({sigint: true});
+const os = require('os');
 
 let srcDirPath = prompt('What is your src directory path? ');
 
