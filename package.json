@@ -1,12 +1,12 @@
 {
-  "name": "anchor-generator",
-  "version": "0.1.0",
+  "name": "WordPress Batch Anchor Generator",
+  "version": "0.1.1",
   "description": "Simple anchor link generator",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Angel Oak Creative",
+  "author": "Sunjay Armstead",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.1",
