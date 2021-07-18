@@ -11,12 +11,13 @@ program.version('0.1.1').description('Simple anchor link generator for WordPress
 
 program
     .requiredOption('-s, --src <directory-path>', 'Set local directory path for PDFs')
+    .requiredOption('-c, --cnt <anchor-content-file-path>', 'Set anchor content file path')
     .parse();
 
 // User prompts
 let options = program.opts();
 let srcDirPath = options.src;
-// let anchorContentFilePath = prompt('What is your anchor content file path? ');
+let anchorContentFilePath = options.cnt;
 // let fileName = prompt('What file name do you want to save to? ');
 
 // try {
@@ -34,4 +35,4 @@ let srcDirPath = options.src;
 //     console.error(err);
 // }
 
-console.log(program.opts().src);
+console.log(program.opts());
