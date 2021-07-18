@@ -1,4 +1,5 @@
 const prompt = require('prompt-sync')({sigint: true});
+const chalk = require('chalk');
 
 // Import modules
 const createSrc = require('./utils/createSrc');
@@ -14,6 +15,9 @@ try {
     let anchorSrc = createSrc(srcDirPath);
     let anchorContent = createContent(anchorContentFilePath);
     let fullAnchor = [];
+    if(anchorSrc.length !== anchorContent.length) {
+        console.error(chalk.red('The files provided do not have the same number of entries'));
+    }
     for (i=0; i < anchorSrc.length; i++) {
         fullAnchor.push(`<a href="${anchorSrc[i]}">${anchorContent[i]}</a>`);
     }
