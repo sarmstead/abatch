@@ -2,8 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const prompt = require('prompt-sync')({sigint: true});
 
-let srcDirPath = prompt('What is your src directory path? ');
-console.log(srcDirPath);
+// let srcDirPath = prompt('What is your src directory path? ');
 
 const createSrc = (srcDirPath) => {
     let srcFileArr = fs.readdirSync(srcDirPath);
@@ -30,13 +29,20 @@ let anchorContentFilePath = prompt('What is your anchor content file path? ');
 const createContent = (anchorContentFilePath, encoding='utf-8') => {
     const fileContents = fs.readFileSync(anchorContentFilePath, encoding);
     let anchorContent = fileContents.split('\n');
+
+    // Remove any indicies that are empty strings
+    for(i=0; i < anchorContent.length; i++) {
+        if (anchorContent[i].length === 0) {
+            anchorContent.splice(i, 1);
+        }
+    }
+    
     console.log(anchorContent);
 }
 
 try {
-    createSrc(srcDirPath);
+    // createSrc(srcDirPath);
     createContent(anchorContentFilePath);
   } catch (err) {
     console.error(err);
 }
-
