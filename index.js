@@ -1,5 +1,6 @@
 const prompt = require('prompt-sync')({sigint: true});
 const chalk = require('chalk');
+const commander = require('commander');
 
 // Import modules
 const createSrc = require('./utils/createSrc');
