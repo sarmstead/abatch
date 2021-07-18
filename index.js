@@ -22,7 +22,6 @@ try {
         fullAnchor.push(`<a href="${anchorSrc[i]}">${anchorContent[i]}</a>`);
     }
     saveFile(fullAnchor, fileName);
-    console.log(fullAnchor);
   } catch (err) {
     console.error(err);
 }
