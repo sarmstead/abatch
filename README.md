@@ -7,7 +7,7 @@ Anchor Generator programmatically creates HTML anchor tags from a list of PDFs a
 ### Initialize Program
 Install necessary packages and create the global `abatch` command. *See [package.json](./package.json)*
 ```
-% npm run booty**
+% npm run booty
 ```
 
 ### Run `abatch`
