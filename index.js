@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const prompt = require('prompt-sync')({sigint: true});
 const chalk = require('chalk');
 
