@@ -10,14 +10,26 @@ const saveFile = require('./utils/saveFile');
 program.version('0.1.1').description('Simple anchor link generator for WordPress');
 
 program
-    .requiredOption('-s, --src <directory-path>', 'Set local directory path for PDFs')
-    .requiredOption('-c, --cnt <anchor-content-file-path>', 'Set anchor content file path')
-    .parse();
+    .command('src <srcPath>')
+    .description('Set local directory path for PDFs')
+    .action(function(path) {
+        console.log(path);
+    });
+    
+
+program
+    .command('cnt <contentPath>')
+    .description('Set anchor content file path')
+    .action(function(path) {
+        console.log(path);
+    });    
+    
+program.parse();
 
 // User prompts
-let options = program.opts();
-let srcDirPath = options.src;
-let anchorContentFilePath = options.cnt;
+// let options = program.opts();
+// let srcDirPath = options.src;
+// let anchorContentFilePath = options.cnt;
 // let fileName = prompt('What file name do you want to save to? ');
 
 // try {
@@ -35,4 +47,4 @@ let anchorContentFilePath = options.cnt;
 //     console.error(err);
 // }
 
-console.log(program.opts());
+// console.log(program.opts());
