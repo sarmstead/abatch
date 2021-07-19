@@ -6,7 +6,9 @@
   "preferGlobal": true,
   "bin": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "booty": "echo \"Ahoy, drop yer anchor! Look 'neath ya fer yer treasure!👑💰\n\" && npm install && npm link",
+    "sail": "echo \"Aye, it's sad to see you go! But farewell, matey.😭\" && npm unlink abatch"
   },
   "author": "Sunjay Armstead",
   "license": "ISC",
