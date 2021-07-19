@@ -1,8 +1,10 @@
 {
-  "name": "WordPress Batch Anchor Generator",
+  "name": "abatch",
   "version": "0.1.1",
   "description": "Simple anchor link generator",
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
