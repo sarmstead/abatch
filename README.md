@@ -18,8 +18,8 @@ Install necessary packages and create the global `abatch` command. *See [package
 ### Answer prompts
 Make sure to enter file paths without escaping characters.
 ```
-%  What is your src directory path? **../ENTER PATH TO DIRECTORY**
-%  What is your anchor content file path? **../ENTER-PATH-TO-FILE**
+%  What is your src directory path? ../ENTER PATH TO DIRECTORY
+%  What is your anchor content file path? ../ENTER-PATH-TO-FILE
 ```
 
 Enter name of target file name without file extension. `abatch` program will automatically create a directory called "anchors" above your parent directory.
